@@ -1,0 +1,17 @@
+def filtroIR (DF, coluna):
+  Dfiltro = {}
+  conjunto = set(DF[coluna])
+  for i in conjunto:
+    listadI = []
+    for j in range(0, len(DF.index)):
+      if DF[coluna][j] == i:
+        listadI = listadI + [j]
+    Dfiltro[i]= listadI
+  
+  return Dfiltro
+
+Filtrar_bairro = filtroIR(dados, "Bairro")
+print(Filtrar_bairro)
+
+Filtrar_banheiros = filtroIR(dados, "Banheiros")
+print(Filtrar_banheiros)
